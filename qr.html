@@ -8,10 +8,20 @@
 </head>
 <body>
 <h1>Scan the QR code, then press finish</h1>
-<canvas id="canvas"></canvas>
+<div class="canvas-container">
+    <canvas id="canvas"></canvas>
+</div>
+
 <script src="node_modules/qrcode/build/qrcode.js"></script>
 <script>
-    QRCode.toCanvas(document.getElementById('canvas'), 'sample text', function (error) {
+    var opts = {
+        scale: 10,
+        color: {
+            dark:"#9fba40",
+            light:"#000000"
+        }
+    }
+    QRCode.toCanvas(document.getElementById('canvas'), 'sample text', opts , function (error) {
         if (error) console.error(error)
         console.log('success!');
     })
