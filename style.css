@@ -25,15 +25,6 @@ ul {
     margin-right: 25%;
 }
 
-.rclogo {
-    outline: none;
-    border: none;
-    width: 12.5%;
-    margin:auto;
-    display:grid;
-    float: left;
-}
-
 .canvas-container {
     display: flex;
     align-items: center;
@@ -61,8 +52,9 @@ ul {
     transform: translateY(4px);
 }
 
-/* Hover effect for start button */
-.start_btn:hover {background-color: rgb(62, 142, 65)}
+.start_btn:hover {
+    background-color: rgb(191, 217, 108)
+}
 
 /* Styling for help button */
 .help_btn {
@@ -79,6 +71,9 @@ ul {
     display:grid;
     float: right;
 }
+.help_btn:hover {
+    background-color: rgb(255, 104, 104)
+}
 
 /* Styling for help button */
 .admin_btn {
@@ -94,4 +89,35 @@ ul {
     margin:auto;
     display:grid;
     float: left;
+}
+.admin_btn:hover {
+    background-color: rgb(255, 221, 60)
+}
+
+.button-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.small_btn {
+    padding: 15px 25px;
+    font-size: 52px;
+    text-align: center;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(159, 186, 64);
+    border: none;
+    border-radius: 25px;
+    width: 30%;
+    margin:auto;
+    display:grid;
+}
+
+.small_btn:active {
+    box-shadow: 0 5px rgb(104, 99, 99);
+    transform: translateY(4px);
+}
+
+.small_btn:hover {
+    background-color: rgb(191, 217, 108)
 }
