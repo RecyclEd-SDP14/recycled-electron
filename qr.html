@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a href="index.html">go home</a>
+<h1>Scan the QR code, then press finish</h1>
 <canvas id="canvas"></canvas>
-<script src="qr.js"></script>
+<script src="node_modules/qrcode/build/qrcode.js"></script>
+<script>
+    QRCode.toCanvas(document.getElementById('canvas'), 'sample text', function (error) {
+        if (error) console.error(error)
+        console.log('success!');
+    })
+</script>
+<button class="start_btn" onclick="location.href = 'index.html'">Finish</button>
 </body>
 </html>

@@ -1,12 +1,12 @@
 {
   "name": "test",
   "version": "0.1.0",
-  "description": "test app",
+  "description": "App for RecyclED kiosk",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "author": "me",
+  "author": "RecyclED Team",
   "license": "MIT",
   "devDependencies": {
     "electron": "^17.1.2"
