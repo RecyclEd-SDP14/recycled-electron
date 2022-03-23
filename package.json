@@ -9,9 +9,11 @@
   "author": "RecyclED Team",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^17.1.2"
+    "electron": "^17.1.2",
+    "electron-packager": "^15.4.0"
   },
   "dependencies": {
+    "python-shell": "^3.0.1",
     "qrcode": "^1.5.0"
   }
 }
