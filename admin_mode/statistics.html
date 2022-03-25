@@ -8,15 +8,34 @@
 </head>
 <body>
 <div class="small_title">Statistics For This Machine</div>
+<script>
+    const Http = new XMLHttpRequest()
+    const url = 'http://34.79.127.126:5000/stats?device=test_device'
+    Http.open("GET", url);
+    Http.send();
+    Http.onreadystatechange = (e) => {
+        const obj = JSON.parse(Http.responseText);
+        console.log(obj)
+        document.getElementById('machine').innerHTML= "Machine ID: test";
+        document.getElementById('total').innerHTML= "Total items recycled: " + obj.total;
+        document.getElementById('glass').innerHTML= "Total glass bottles recycled: " + obj.glass;
+        document.getElementById('plastic').innerHTML= "Total plastic bottles recycled: " + obj.plastic;
+        document.getElementById('cans').innerHTML= "Total cans recycled: " + obj.cans;
+        document.getElementById('trash').innerHTML= "Total trash refused: " + obj.trash;
+        document.getElementById('refunds').innerHTML= "Total refunds given: " + obj.value + "p";
+
+
+    }
+</script>
 <div style="text-align: center">
     <ul class="inline" style="display: inline-block">
-        <li>Machine ID: 1</li>
-        <li>Total items recycled: 1234</li>
-        <li>Total glass bottles recycled: 234</li>
-        <li>Total plastic bottles recycled: 333</li>
-        <li>Total cans recycled: 333</li>
-        <li>Total trash refused: 334</li>
-        <li>Total refunds given: £12.34</li>
+        <li id="machine"></li>
+        <li id="total"></li>
+        <li id="glass"></li>
+        <li id="plastic"></li>
+        <li id="cans"></li>
+        <li id="trash"></li>
+        <li id="refunds"></li>
     </ul>
 </div>
 <div class="button-grid">
