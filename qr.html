@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="userpages.css">
 </head>
 <body>
-<h1 style="font-size: 50px">Scan the QR code, then press finish</h1>
+<h1 style="font-size: 42px">Scan the QR code, then press finish</h1>
 <div class="canvas-container">
     <canvas id="canvas"></canvas>
 </div>
@@ -15,7 +15,7 @@
 <script src="node_modules/qrcode/build/qrcode.js"></script>
 <script>
     var opts = {
-        scale: 10.5,
+        scale: 8,
         color: {
             dark:"#9fba40",
             light:"#000000"
@@ -26,6 +26,6 @@
         console.log('success!');
     })
 </script>
-<button class="start_btn" onclick="location.href = 'index.html'">Finish</button>
+<button class="start_btn" onclick="location.href = 'index.html'" style="padding: 10px 5px">Finish</button>
 </body>
 </html>

@@ -8,7 +8,7 @@ button:hover{
 
 .menu_btn {
     padding: 15px 25px;
-    font-size: 52px;
+    font-size: 32px;
     text-align: center;
     outline: none;
     color: rgb(0, 0, 0);
@@ -21,27 +21,27 @@ button:hover{
 }
 
 .small_title {
-    font-size: 48px;
+    font-size: 42px;
     text-align: center;
     font-family: "Roboto", "Courier New", monospace;
     color: rgb(255, 221, 00);
 }
 
 .large_title{
-    font-size: 72px;
+    font-size: 52px;
     text-align: center;
     font-family: "Roboto", "Courier New", monospace;
     color: rgb(255, 221, 00);
 }
 
 .inline{
-    font-size: 32px;
-    text-align: center;
+    font-size: 22px;
+    text-align: left;
     font-family: "Roboto", "Courier New", monospace;
     color: rgb(255, 221, 00);
 }
 
 .button-grid {
     display: grid;
-    gap: 10px;
+    gap: 5px;
 }

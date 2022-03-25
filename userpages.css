@@ -5,13 +5,14 @@ body {
 
 /* Styling for heading of the app */
 h1 {
-    font-size: 72px;
+    font-size: 52px;
     text-align: center;
     font-family: "Roboto", "Courier New", monospace;
     color: rgb(159, 186, 64);
+    margin: auto;
 }
 h2 {
-    font-size: 36px;
+    font-size: 32px;
     text-align: center;
     font-family: "Roboto", "Courier New", monospace;
     color: rgb(159, 186, 64);
@@ -31,7 +32,7 @@ ul {
 /* Styling for the ON button */
 .start_btn {
     padding: 15px 25px;
-    font-size: 108px;
+    font-size: 52px;
     text-align: center;
     outline: none;
     color: rgb(0, 0, 0);
@@ -55,8 +56,8 @@ ul {
 
 /* Styling for help button */
 .help_btn {
-    padding: 15px 25px;
-    font-size: 52px;
+    padding: 10px 5px;
+    font-size: 32px;
     text-align: center;
     outline: none;
     color: rgb(0, 0, 0);
@@ -74,8 +75,8 @@ ul {
 
 /* Styling for help button */
 .admin_btn {
-    padding: 15px 25px;
-    font-size: 40px;
+    padding: 10px 5px;
+    font-size: 32px;
     text-align: center;
     outline: none;
     color: rgb(0, 0, 0);
@@ -93,19 +94,19 @@ ul {
 
 .button-grid {
     display: grid;
-    gap: 10px;
+    gap: 5px;
 }
 
 .small_btn {
-    padding: 15px 25px;
-    font-size: 52px;
+    padding: 10px 5px;
+    font-size: 32px;
     text-align: center;
     outline: none;
     color: rgb(0, 0, 0);
     background-color: rgb(159, 186, 64);
     border: none;
     border-radius: 25px;
-    width: 30%;
+    width: 40%;
     margin:auto;
     display:grid;
 }
