@@ -14,17 +14,31 @@
 
 <script src="node_modules/qrcode/build/qrcode.js"></script>
 <script>
-    var opts = {
+    const Http = new XMLHttpRequest()
+    
+
+
+
+
+    
+    const url = 'http://34.79.127.126:5000/getTransactionID?device=test_device'
+    Http.open("GET", url);
+    Http.send();
+    Http.onreadystatechange = (e) => {
+        const obj = JSON.parse(Http.responseText);
+        var opts = {
         scale: 8,
         color: {
             dark:"#9fba40",
             light:"#000000"
         }
     }
-    QRCode.toCanvas(document.getElementById('canvas'), 'http://34.79.127.126:5000/coupon?uid=1234', opts , function (error) {
+    QRCode.toCanvas(document.getElementById('canvas'), 'http://34.79.127.126:5000/coupon?uid='+obj.id.toString(), opts , function (error) {
         if (error) console.error(error)
         console.log('success!');
     })
+    }
+    
 </script>
 <button class="start_btn" onclick="location.href = 'index.html'" style="padding: 10px 5px">Finish</button>
 </body>

@@ -20,7 +20,8 @@ const createWindow = () => {
 const curr_stats = {
     "plastic": 0,
     "glass": 0,
-    "can": 0
+    "can": 0,
+    "trash": 0
 };
 
 const data = JSON.stringify(curr_stats);

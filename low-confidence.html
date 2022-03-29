@@ -12,8 +12,8 @@
 <div class="button-grid">
     <button class="small_btn" id="low-conf-pbottle" >Plastic Bottle</button>
     <button class="small_btn" id="low-conf-gbottle" >Glass Bottle</button>
-    <button class="small_btn" id="low-conf-can">Can</button>
-    <button class="small_btn" onclick="location.href = 'trash.html'" style="background-color: rgb(255, 212, 0)">Trash</button>
+    <button class="small_btn" id="low-conf-can" >Can</button>
+    <button class="small_btn" id="low-conf-trash" style="background-color: rgb(255, 212, 0)">Trash</button>
 
     <script>
         document.getElementById("low-conf-pbottle").onclick = function () {
@@ -53,6 +53,19 @@
                 console.log('writing to ' + fileName);
             });
             location.href = "high-confidence.html";
+        };
+
+        document.getElementById("low-conf-trash").onclick = function () {
+            const fs = require('fs');
+            const file = require('./curr_stats.json');
+            file.trash += 1
+
+            fs.writeFile('./curr_stats.json', JSON.stringify(file), function writeJSON(err) {
+                if (err) return console.log(err);
+                console.log(JSON.stringify(file));
+                console.log('writing to ' + fileName);
+            });
+            location.href = "trash.html";
         };
     </script>
 </div>

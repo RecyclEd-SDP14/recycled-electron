@@ -20,6 +20,7 @@ Debug pages:
 <script>
     let pyshell = require('python-shell')
     var fs = require('fs')
+    const file = require('./curr_stats.json');
     var PiCamera = require('pi-camera')
     const Console = require("console");
     var myCamera = new PiCamera({
@@ -48,9 +49,17 @@ Debug pages:
 			    console.log("file deleted.")
 		    });
 		    if (obj.confidence > 0.7 && obj.prediction != 'trash'){
+                if (obj.prediction == 'plastic_bottle') {
+                    file.plastic += 1
+                } else if (obj.prediction == 'glass_bottle') {
+                    file.glass += 1
+                } else {
+                    file.can += 1
+                }
 			    console.log("Going to higth confidence")
 			    location.href="high-confidence.html"
 		    } else if (obj.confidence >0,7 && obj.predicition == "trash"){
+                file.trash += 1
 			    console.log("Going to trash")
 			    location.href="trash.html"
 		    } else {
@@ -62,6 +71,11 @@ Debug pages:
             .catch((error) => {
                 // Handle your error
                 console.log(error)
+        fs.writeFile('./curr_stats.json', JSON.stringify(file), function writeJSON(err) {
+            if (err) return console.log(err);
+            console.log(JSON.stringify(file));
+            console.log('writing to ' + fileName);
+        });
 		// Remove the image just in case error occured after
 		fs.unlink('test.jpg',function(err) {
 			if (err) throw err;
