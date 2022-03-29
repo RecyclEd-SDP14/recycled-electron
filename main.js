@@ -8,6 +8,8 @@ const createWindow = () => {
         autoHideMenuBar: true,
         frame: false,
         webPreferences: {
+	    nodeIntegration: true,
+	    contextIsolation: false,
             preload: path.join(__dirname, 'preload.js')
         }
     })
