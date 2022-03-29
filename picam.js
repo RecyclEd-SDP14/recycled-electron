@@ -22,6 +22,9 @@ function takePhoto() {
                 if (err) throw err;
                 // results is an array consisting of messages collected during execution
                 console.log('results', results);
+		const obj = JSON.parse(results);
+		console.log(obj.prediction)
+		console.log(obj.confidence)
             });
         })
         .catch((error) => {

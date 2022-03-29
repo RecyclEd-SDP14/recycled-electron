@@ -42,8 +42,17 @@ Debug pages:
                     if (err) throw err;
                     // results is an array consisting of messages collected during execution
                     console.log('results', results);
-                    const obj = JSON.parse(results)
-                    console.log(obj.confidence)
+                    const obj = JSON.parse(results);
+		    if (obj.confidence > 0.7 && obj.prediction != 'trash'){
+			    console.log("Going to higth confidence")
+			    location.href="high-confidence.html"
+		    } else if (obj.confidence >0,7 && obj.predicition == "trash"){
+			    console.log("Going to trash")
+			    location.href="trash.html"
+		    } else {
+			    console.log("Going to low confidence")
+			    location.href="low-confidence.html"
+		    }
                 });
             })
             .catch((error) => {
