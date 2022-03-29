@@ -12,6 +12,27 @@
 <button class="admin_btn" onclick="location.href = 'admin_mode/password.html'">Service</button>
 <br>
 
+<script>
+    const fs = require('fs');
+    const curr_stats = {
+        "plastic": 0,
+        "glass": 0,
+        "can": 0,
+        "trash": 0
+    };
+
+    const data = JSON.stringify(curr_stats);
+
+    fs.writeFile('curr_stats.json', data, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log("JSON data is saved.");
+    });
+    
+</script>
+
+
 <h1>Welcome to RecyclED</h1>
 <h2>To begin, press the start button</h2>
 

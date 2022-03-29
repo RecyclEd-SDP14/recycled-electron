@@ -14,14 +14,31 @@
 
 <script src="node_modules/qrcode/build/qrcode.js"></script>
 <script>
+    const fs = require('fs');
+    const file = require('./curr_stats.json');
+
+    const httpUpload = new XMLHttpRequest()
+    
+    const value = (file.plastic * 20) + (file.glass * 20) + (file.can * 20);
+    
+
+    console.log(value);
+    
+    const urlUpload = 'http://34.79.127.126:5000/uploadData?device=test_device&value='+value.toString()+'&plastic='+file.plastic.toString()+'&glass='+file.glass.toString()+'&cans='+file.can.toString()+'&trash='+file.trash.toString();
+
+    console.log(urlUpload);
+    console.log("sent")
+    
+    httpUpload.open("GET", urlUpload, false);
+    httpUpload.send();
+    httpUpload.onreadystatechange = (e) => {
+        const test = httpUpload.responseText;
+    }
+
+
+
     const Http = new XMLHttpRequest()
-    
-
-
-
-
-    
-    const url = 'http://34.79.127.126:5000/getTransactionID?device=test_device'
+    url = 'http://34.79.127.126:5000/getTransactionID?device=test_device'
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange = (e) => {
