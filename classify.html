@@ -17,7 +17,62 @@ Debug pages:
     <li><a href="low-confidence.html">Low confidence</a></li>
     <li><a href="trash.html">Trash</a></li>
 </ul>
+<script>
+    let pyshell = require('python-shell')
+    var fs = require('fs')
+    var PiCamera = require('pi-camera')
+    const Console = require("console");
+    var myCamera = new PiCamera({
+        mode: 'photo',
+        output: `test.jpg`,
+        width: 640,
+        height: 480,
+        nopreview: true,
+        timeout: 1,
+    })
 
-<button class="start_btn" onclick="location.href = 'qr.html'" style="font-size: 52px; width: 40%">I'm finished recycling</button>
+    function takePhoto() {
+        myCamera.snap()
+            .then((result) => {
+                console.log("took picture")
+                let options = {
+                    args: ['test.jpg']
+                }
+                pyshell.PythonShell.run('gcp_handler.py', options, function (err, results) {
+                    if (err) throw err;
+                    // results is an array consisting of messages collected during execution
+                    console.log('results', results);
+                    const obj = JSON.parse(results);
+		    fs.unlink('test.jpg',function (err) {
+			    if (err) throw err;
+			    console.log("file deleted.")
+		    });
+		    if (obj.confidence > 0.7 && obj.prediction != 'trash'){
+			    console.log("Going to higth confidence")
+			    location.href="high-confidence.html"
+		    } else if (obj.confidence >0,7 && obj.predicition == "trash"){
+			    console.log("Going to trash")
+			    location.href="trash.html"
+		    } else {
+			    console.log("Going to low confidence")
+			    location.href="low-confidence.html"
+		    }
+                });
+            })
+            .catch((error) => {
+                // Handle your error
+                console.log(error)
+		// Remove the image just in case error occured after
+		fs.unlink('test.jpg',function(err) {
+			if (err) throw err;
+			console.log("file deleted")
+		});
+            });
+    }
+</script>
+<div class="button-grid">
+    <button class="start_btn" onclick=takePhoto() style="font-size: 52px; width: 40%">Take Picture</button>
+    <button class="start_btn" onclick="location.href = 'qr.html'" style="font-size: 52px; width: 40%">I'm finished recycling</button>
+</div>
 </body>
 </html>

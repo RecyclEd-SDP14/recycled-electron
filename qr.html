@@ -21,7 +21,7 @@
             light:"#000000"
         }
     }
-    QRCode.toCanvas(document.getElementById('canvas'), 'http://34.79.127.126:5000/coupon', opts , function (error) {
+    QRCode.toCanvas(document.getElementById('canvas'), 'http://34.79.127.126:5000/coupon?uid=1234', opts , function (error) {
         if (error) console.error(error)
         console.log('success!');
     })
