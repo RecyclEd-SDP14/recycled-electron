@@ -73,6 +73,11 @@ ul {
     background-color: rgb(255, 104, 104)
 }
 
+.help_btn:active {
+    box-shadow: 0 5px rgb(104, 99, 99);
+    transform: translateY(4px);
+}
+
 /* Styling for help button */
 .admin_btn {
     padding: 10px 5px;
@@ -90,6 +95,11 @@ ul {
 }
 .admin_btn:hover {
     background-color: rgb(255, 221, 60)
+}
+
+.admin_btn:active {
+    box-shadow: 0 5px rgb(104, 99, 99);
+    transform: translateY(4px);
 }
 
 .button-grid {

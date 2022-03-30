@@ -5,7 +5,7 @@ const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
         height: 480,
-        fullscreen: true,
+        fullscreen: false,
         autoHideMenuBar: true,
         frame: false,
         webPreferences: {

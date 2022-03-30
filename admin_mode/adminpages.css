@@ -20,6 +20,39 @@ button:hover{
     display:grid;
 }
 
+#password_field {
+    padding: 15px 25px;
+    font-size: 32px;
+    text-align: center;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 221, 00);
+    border: none;
+    border-radius: 25px;
+    width: 80%;
+    margin:auto;
+    display:grid;
+}
+
+.enter_btn {
+    padding: 15px 25px;
+    font-size: 32px;
+    text-align: center;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 221, 00);
+    border: none;
+    border-radius: 25px;
+    width: 90%;
+    margin:auto;
+    display:grid;
+}
+
+.enter_btn:active {
+    box-shadow: 0 5px rgb(104, 99, 99);
+    transform: translateY(4px);
+}
+
 .small_title {
     font-size: 42px;
     text-align: center;
@@ -44,4 +77,41 @@ button:hover{
 .button-grid {
     display: grid;
     gap: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  font-size: 30px;
+  text-align: center;
+}
+
+.back_btn {
+    padding: 10px 5px;
+    font-size: 32px;
+    text-align: center;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 212, 0);
+    border: none;
+    border-radius: 15px;
+    width: 15%;
+    margin:auto;
+    display:grid;
+    float: left;
+}
+
+.back_btn:active {
+    box-shadow: 0 5px rgb(104, 99, 99);
+    transform: translateY(4px);
+}
+
+#ReEnter {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Roboto", "Courier New", monospace;
+    color: rgb(256, 00, 00);
 }
