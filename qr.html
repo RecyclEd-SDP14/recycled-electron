@@ -20,14 +20,8 @@
     const httpUpload = new XMLHttpRequest()
     
     const value = (file.plastic * 20) + (file.glass * 20) + (file.can * 20);
-    
-
-    console.log(value);
-    
+        
     const urlUpload = 'http://34.79.127.126:5000/uploadData?device=test_device&value='+value.toString()+'&plastic='+file.plastic.toString()+'&glass='+file.glass.toString()+'&cans='+file.can.toString()+'&trash='+file.trash.toString();
-
-    console.log(urlUpload);
-    console.log("sent")
     
     httpUpload.open("GET", urlUpload, false);
     httpUpload.send();
@@ -55,7 +49,7 @@
         console.log('success!');
     })
     }
-    
+    fs.unlink('./curr_stats.json');
 </script>
 <button class="start_btn" onclick="location.href = 'index.html'" style="padding: 10px 5px">Finish</button>
 </body>
