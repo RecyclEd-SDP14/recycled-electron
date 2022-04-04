@@ -28,9 +28,10 @@
     httpUpload.onreadystatechange = (e) => {
         const test = httpUpload.responseText;
     }
+    fs.unlinkSync('./curr_stats.json');
 
     const Http = new XMLHttpRequest()
-    url = 'http://34.79.127.126:5000/getTransactionID?device=test_device'
+    let url = 'http://34.79.127.126:5000/getTransactionID?device=test_device'
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange = (e) => {
@@ -47,7 +48,6 @@
         console.log('success!');
     })
     }
-    fs.unlink('./curr_stats.json');
 </script>
 <button class="start_btn" onclick="location.href = 'index.html'" style="padding: 10px 5px">Finish</button>
 </body>
