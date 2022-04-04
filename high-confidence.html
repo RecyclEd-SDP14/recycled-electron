@@ -11,22 +11,29 @@
 <h2>Please wait...</h2>
 <script>
     const fs = require('fs');
-    var path = "./";
 
-    const watcher = fs.watch(path, (eventType, filename) => {
-        if (filename == "finished.txt") {
-            sleep(100)
-            fs.unlink('./finished.txt', (err) => {
-                if (err) {
-                    console.log(err);
-                }
-            });
-            watcher.close()
-            location.href='classify.html'
-        }
+    try {
+        var path = "./";
+
+        const watcher = fs.watch(path, (eventType, filename) => {
+            if (filename == "finished.txt") {
+                watcher.close()
+                sleep(500)
+                fs.unlink('./finished.txt', (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+                location.href = 'classify.html'
+            }
         })
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+
+        }
+    } catch (e) {
+        console.log('e')
     }
 </script>
 <button class="start_btn" onclick="location.href = 'classify.html'" style="font-size: 52px; width: 40%">Cba waiting tbh</button>
