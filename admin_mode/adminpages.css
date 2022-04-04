@@ -2,8 +2,13 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
-button:hover{
+.menu_btn:hover{
     background-color: rgb(255, 221, 60)
+}
+
+.menu_btn:active {
+    box-shadow: 0 5px rgb(104, 99, 99);
+    transform: translateY(4px);
 }
 
 .menu_btn {
@@ -58,6 +63,7 @@ button:hover{
     text-align: center;
     font-family: "Roboto", "Courier New", monospace;
     color: rgb(255, 221, 00);
+
 }
 
 .large_title{
@@ -77,16 +83,6 @@ button:hover{
 .button-grid {
     display: grid;
     gap: 5px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-.grid-item {
-  font-size: 30px;
-  text-align: center;
 }
 
 .back_btn {
@@ -109,9 +105,83 @@ button:hover{
     transform: translateY(4px);
 }
 
-#ReEnter {
-    font-size: 30px;
+.fake_btn {
+    padding: 10px 5px;
+    font-size: 32px;
     text-align: center;
-    font-family: "Roboto", "Courier New", monospace;
-    color: rgb(256, 00, 00);
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 15px;
+    width: 15%;
+    margin:auto;
+    display:grid;
+    float: right;
+}
+
+form {
+  width:  350px;
+  margin: auto;
+  background: #000000;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0px 5px 5px -0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+input[type="password"] {
+  padding: 0 40px;
+  border-radius: 5px;
+  width: 250px;
+  height: 46px;
+  margin: auto;
+  border: 1px solid rgb(255, 221, 00);
+  outline: none;
+  font-size: 40px;
+  color: rgb(255, 221, 00);
+  background-color: #000000;
+  text-shadow: 0 0 0 rgb(71, 71, 71);
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 0 40px;
+  border-radius: 5px;
+  width: 250px;
+  height: 46px;
+  margin: auto;
+  border: 1px solid rgb(255, 221, 00);
+  outline: none;
+  font-size: 20px;
+  color: rgb(255, 00, 00);
+  background-color: #000000;
+  text-shadow: 0 0 0 rgb(71, 71, 71);
+  text-align: center;
+}
+
+.pinButton {
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  border-radius: 50%;
+  height: 60px;
+  font-weight: 550;
+  width: 60px;
+  color: transparent;
+  text-shadow: 0 0 0 rgb(255, 221, 00);;
+  margin: 7px 20px;
+}
+
+.clear, .enter {
+  font-size: 1em !important;
+}
+
+.pinButton:hover, .clear:hover, .enter:hover {
+  box-shadow: rgb(255, 221, 00) 0 0 1px 1px;
+}
+
+.pinButton:active, .clear:active, .enter:active {
+  background: rgb(255, 221, 00);
+  color: #000000;
 }
