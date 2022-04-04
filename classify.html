@@ -52,13 +52,13 @@ Debug pages:
 		    if (obj.confidence > 0.7 && obj.prediction != 'trash'){
                 if (obj.prediction == 'plastic_bottle') {
                     file.plastic += 1
-                    number_to_write = 0
+                    number_to_write = '0'
                 } else if (obj.prediction == 'glass_bottle') {
                     file.glass += 1
-                    number_to_write = 2
+                    number_to_write = '2'
                 } else {
                     file.can += 1
-                    number_to_write = 1
+                    number_to_write = '1'
                 }
 			    console.log("Going to high confidence")
                 write()
