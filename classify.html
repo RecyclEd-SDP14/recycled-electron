@@ -84,11 +84,7 @@ Debug pages:
             .catch((error) => {
                 // Handle your error
                 console.log(error)
-        fs.writeFile('./curr_stats.json', JSON.stringify(file), function writeJSON(err) {
-            if (err) return console.log(err);
-            console.log(JSON.stringify(file));
-            console.log('writing to ' + fileName);
-        });
+            
 		// Remove the image just in case error occured after
 		fs.unlink('test.jpg',function(err) {
 			if (err) throw err;
@@ -98,6 +94,12 @@ Debug pages:
     }
 
     function write() {
+        fs.writeFile('./curr_stats.json', JSON.stringify(file), function writeJSON(err) {
+            if (err) return console.log(err);
+                console.log(JSON.stringify(file));
+                console.log('writing to ' + fileName);
+        })
+
         fs.writeFile('./result.txt', number_to_write, err => {
             if (err) {
                 console.error(err)
@@ -111,7 +113,7 @@ Debug pages:
     }
 </script>
 <div class="button-grid">
-    <button class="start_btn" onclick=takePhoto() style="font-size: 52px; width: 40%">Take Picture</button>
+    <button class="start_btn" onclick=takePhoto() style="font-size: 52px; width: 40%">Recycle!</button>
     <button class="start_btn" onclick="location.href = 'qr.html'" style="font-size: 52px; width: 40%">I'm finished recycling</button>
 </div>
 </body>
