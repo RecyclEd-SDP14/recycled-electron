@@ -49,6 +49,14 @@ Debug pages:
 			    if (err) throw err;
 			    console.log("file deleted.")
 		    });
+            fs.unlinkSync('./result.txt',function (err) {
+                if (err) throw err;
+                console.log("file deleted.")
+            });
+            fs.unlinkSync('./ready.txt',function (err) {
+                if (err) throw err;
+                console.log("file deleted.")
+            });
 		    if (obj.confidence > 0.7 && obj.prediction != 'trash'){
                 if (obj.prediction == 'plastic_bottle') {
                     file.plastic += 1

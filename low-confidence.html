@@ -59,19 +59,19 @@
         };
 
         function finish() {
-            fs.writeFile('./result.txt', value, err => {
-                if (err) {
-                    console.error(err)
-                }
-            })
-            fs.writeFile('./ready.txt', 'foo', err => {
-                if (err) {
-                    console.error(err)
-                }
-            })
             if (value == 3) {
                 location.href = "trash.html";
             } else {
+                fs.writeFile('./result.txt', value, err => {
+                    if (err) {
+                        console.error(err)
+                    }
+                })
+                fs.writeFile('./ready.txt', 'foo', err => {
+                    if (err) {
+                        console.error(err)
+                    }
+                })
                 location.href = "high-confidence.html";
             }
         }
